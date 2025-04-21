@@ -1,0 +1,189 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* 横スクロールを防止 */
+}
+
+/* ヘッダー */
+header {
+    background: linear-gradient(to right, #FF6700, #0047AB);
+    color: white;
+    padding: 20px 0;
+    position: fixed; /* スクロールしても固定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #eee;
+}
+
+/* メインコンテンツ */
+main {
+    margin-top: 80px; /* ヘッダーの高さ分だけmarginを取る */
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 80px auto 0;
+}
+
+.content-section {
+    background-color: white;
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.content-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content-section h2 {
+    color: #333;
+    font-size: 2.5em;
+    border-bottom: 3px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ヒーローセクション */
+#hero {
+    background: linear-gradient(135deg, #FF6700aa, #0047ABaa); /* 半透明のグラデーション */
+    color: white;
+    text-align: center;
+    padding: 150px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('hero-background.jpg') center/cover no-repeat; /* 背景画像を設定 */
+    opacity: 0.3; /* 背景の透明度 */
+    animation: pulse 5s infinite alternate; /* アニメーション */
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; transform: scale(1); }
+    100% { opacity: 0.5; transform: scale(1.05); }
+}
+
+/* グリッドレイアウト (卒業制作、プロジェクト) */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #0047AB;
+}
+
+/* リストレイアウト (ブログ) */
+.list-layout ul {
+    list-style: none;
+    padding: 0;
+}
+
+.list-layout li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.list-layout li:last-child {
+    border-bottom: none;
+}
+
+.list-layout li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.list-layout li a:hover {
+    color: #FF6700;
+}
+
+.list-layout .date {
+    color: #777;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
