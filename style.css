@@ -58,6 +58,26 @@ header nav ul li a:hover {
 }
 
 /* メインコンテンツ */
+
+@media (min-width: 768px) { /* PCなどの比較的大きな画面 */
+    main {
+        padding-left: 25%; /* 左端から25%の位置にコンテンツ開始 */
+        padding-right: 25%; /* 右端まで75%の位置でコンテンツ終了 */
+    }
+}
+
+.content-section h2 {
+    color: transparent; /* テキストを透明に */
+    background: linear-gradient(to right, #FF6700, #0047AB);
+    -webkit-background-clip: text; /* 背景をテキストの形にクリップ (WebKit系ブラウザ) */
+    background-clip: text; /* 背景をテキストの形にクリップ (標準) */
+    font-size: 2.5em;
+    border-bottom: 3px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
 main {
     margin-top: 80px; /* ヘッダーの高さ分だけmarginを取る */
     padding: 40px 20px;
@@ -81,24 +101,15 @@ main {
     transform: translateY(0);
 }
 
-@media (min-width: 768px) { /* PCなどの比較的大きな画面 */
-    main {
-        padding-left: 25%; /* 左端から25%の位置にコンテンツ開始 */
-        padding-right: 25%; /* 右端まで75%の位置でコンテンツ終了 */
-    }
-}
-
 .content-section h2 {
-    color: transparent; /* テキストを透明に */
-    background: linear-gradient(to right, #FF6700, #0047AB);
-    -webkit-background-clip: text; /* 背景をテキストの形にクリップ (WebKit系ブラウザ) */
-    background-clip: text; /* 背景をテキストの形にクリップ (標準) */
+    color: #333;
     font-size: 2.5em;
     border-bottom: 3px solid #ddd;
     padding-bottom: 15px;
     margin-bottom: 30px;
     text-align: center;
 }
+
 
 /* ヒーローセクション */
 #hero {
