@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>鳥取県 学習ページ</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #e0f7fa;
+      overflow: hidden;
+      position: relative;
+      font-family: sans-serif;
+    }
+
+    .circle {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      animation: float 6s ease-in-out infinite;
+      transition: transform 0.2s;
+    }
+
+    .circle:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const titles = [
+      { text: \"鳥取県の概要\", link: \"content1.html\" },
+      { text: \"訪問先「」\", link: \"content2.html\" },
+      { text: \"見学内容\", link: \"content3.html\" },
+      { text: \"スケジュール案\", link: \"content4.html\" },
+      { text: \"観光プラン\", link: \"content5.html\" },
+      { text: \"学習成果\", link: \"content6.html\" },
+      { text: \"費用\", link: \"content7.html\" },
+      { text: \"アクセス\", link: \"content8.html\" }
+    ];
+
+    titles.forEach((item, i) => {
+      const circle = document.createElement(\"div\");
+      circle.className = \"circle\";
+      circle.innerText = item.text;
+      circle.style.top = `${10 + Math.random() * 70}%`;
+      circle.style.left = `${10 + Math.random() * 70}%`;
+      circle.onclick = () => window.location.href = item.link;
+      document.body.appendChild(circle);
+    });
+  </script>
+</body>
+</html>
